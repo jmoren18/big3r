@@ -33,6 +33,9 @@ export default function Portada() {
     <div className="portada">
       <h1 className="pregunta-curs">{CONFIG.filConductor}</h1>
       <p className="entrada">Aquest curs ens farem sis preguntes. Comencem per la primera.</p>
+      <Enllac a="/curs" className="boto boto--suau">
+        Com funciona el curs
+      </Enllac>
       <ul className="safata">
         <li className="safata__principal">
           <Portaobjectes sa={activa} />

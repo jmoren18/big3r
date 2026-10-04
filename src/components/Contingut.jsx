@@ -9,7 +9,7 @@ import Text from './Text.jsx'
 export const teContingut = (valor, versio) => {
   const v = tria(valor, versio)
   if (v == null || esPendent(v)) return false
-  if (Array.isArray(v)) return v.length > 0
+  if (Array.isArray(v)) return v.some((x) => !esPendent(x))
   return true
 }
 
@@ -26,11 +26,11 @@ export default function Contingut({ valor, llista }) {
     const Llista = llista === 'passos' ? 'ol' : 'ul'
     cos = (
       <Llista className={llista === 'passos' ? 'passos' : 'punts'}>
-        {v.map((item, i) => (
-          <li key={i}>
-            <Text>{item}</Text>
-          </li>
-        ))}
+        {v
+          .filter((item) => CONFIG.modeRevisio || !esPendent(item))
+          .map((item, i) => (
+            <li key={i}>{esPendent(item) ? <Pendent nota={item.nota} enLinia /> : <Text>{item}</Text>}</li>
+          ))}
       </Llista>
     )
   } else {

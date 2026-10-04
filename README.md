@@ -19,6 +19,7 @@ No es recull cap dada dels alumnes. Tot queda al navegador de cadascú.
 | Què vull canviar | Fitxer |
 | --- | --- |
 | Títols de les SA i quines estan publicades | `src/data/curs.js` |
+| Pàgina «Com funciona el curs» | `src/data/curs-info.js` |
 | Sessions de la SA1 | `src/data/sa1/s01.js`, `s02.js`… i `index.js` |
 | Jocs de pràctica de la SA1 | `src/data/sa1/joc-nivells.js` |
 | Fases de cada plantilla | `src/plantilles.js` |

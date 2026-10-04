@@ -9,11 +9,13 @@ import PaginaSA from './pages/PaginaSA.jsx'
 import PaginaSessio from './pages/PaginaSessio.jsx'
 import Autoavaluacio from './pages/Autoavaluacio.jsx'
 import Joc from './pages/Joc.jsx'
+import ElCurs from './pages/ElCurs.jsx'
 import NoTrobada from './pages/NoTrobada.jsx'
 
 function Pagina() {
   const { ruta } = useRuta()
   if (ruta === '/') return <Portada />
+  if (ruta === '/curs') return <ElCurs />
 
   const m = ruta.match(/^\/(sa\d+)(?:\/(s\/(\d+)|autoavaluacio|joc\/([a-z0-9-]+)))?\/?$/)
   const sa = m && trobaSA(m[1])

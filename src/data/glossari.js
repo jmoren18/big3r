@@ -36,5 +36,9 @@ export const GLOSSARI = [
   { formes: ['comunitat'], es: 'comunidad', uk: 'угруповання', ru: 'сообщество', ar: 'مجتمع أحيائي', ur: 'حیاتیاتی برادری', hi: 'समुदाय', pa: 'ਭਾਈਚਾਰਾ' },
   { formes: ['ecosistema', 'ecosistemes'], es: 'ecosistema', uk: 'екосистема', ru: 'экосистема', ar: 'نظام بيئي', ur: 'ماحولیاتی نظام', hi: 'पारिस्थितिकी तंत्र', pa: 'ਈਕੋਸਿਸਟਮ' },
   { formes: ['biosfera'], es: 'biosfera', uk: 'біосфера', ru: 'биосфера', ar: 'المحيط الحيوي', ur: 'حیاتی کرہ', hi: 'जैवमंडल', pa: 'ਜੀਵ-ਮੰਡਲ' },
+  { formes: ['llibreta'], es: 'cuaderno', uk: 'зошит', ru: 'тетрадь', ar: 'دفتر', ur: 'کاپی', hi: 'कॉपी', pa: 'ਕਾਪੀ' },
+  { formes: ['estoig'], es: 'estuche', uk: 'пенал', ru: 'пенал', ar: 'مقلمة', ur: 'پنسل بکس', hi: 'पेंसिल बॉक्स', pa: 'ਪੈਨਸਿਲ ਬਾਕਸ' },
+  { formes: ['avaluació'], es: 'evaluación', uk: 'оцінювання', ru: 'оценивание', ar: 'تقييم', ur: 'جائزہ', hi: 'मूल्यांकन', pa: 'ਮੁਲਾਂਕਣ' },
+  { formes: ['trimestre'], es: 'trimestre', uk: 'триместр', ru: 'триместр', ar: 'فصل دراسي', ur: 'سہ ماہی', hi: 'तिमाही', pa: 'ਤਿਮਾਹੀ' },
   { formes: ['espècie', 'espècies'], es: 'especie', uk: 'вид', ru: 'вид', ar: 'نوع', ur: 'نوع', hi: 'प्रजाति', pa: 'ਪ੍ਰਜਾਤੀ' }
 ]

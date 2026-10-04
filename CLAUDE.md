@@ -17,3 +17,4 @@
 - Un joc és un fitxer de dades com `src/data/sa1/joc-nivells.js`, afegit a `jocs` de la seva SA. Els tipus
   d'exercici disponibles són a `src/joc/tipus.jsx`: ordena, relaciona, buits, classifica, vf, cadena i oberta.
   Els enunciats i les solucions han de venir dels materials de la professora.
+- El web és públic. No hi posis codis de Classroom, correus ni dades d'alumnes.
