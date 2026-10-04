@@ -5,6 +5,7 @@
 - Tot el text de cara a l'alumne és en català, amb frases curtes i vocabulari senzill: part del
   grup té poc domini del català.
 - Les sessions duren 50 minuts. N'hi ha de dos tipus: `aula` (grup sencer) i `laboratori` (mig grup).
+  Al web només s'etiqueten les de laboratori; una sessió sense tipus és d'aula.
 - Avaluació amb NA/AS/AN/AE, sense notes numèriques.
 - Una SA nova segueix el patró de `src/data/sa1/` i es publica posant `publicada: true` a `src/data/curs.js`.
 - Un camp pot ser igual per a tothom o diferent per versió: `{ A: ..., B: ..., C: ... }`.

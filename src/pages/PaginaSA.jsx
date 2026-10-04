@@ -1,20 +1,16 @@
 import { CONFIG } from '../config.js'
 import { PLANTILLES } from '../plantilles.js'
 import { esPendent } from '../pendent.js'
-import { textCompetencia } from '../data/curs-info.js'
+import { textCompetencia, textTransversal } from '../data/curs-info.js'
 import { Enllac } from '../router.jsx'
 import Mostra from '../components/Mostra.jsx'
 import Pendent from '../components/Pendent.jsx'
 import Text from '../components/Text.jsx'
 
+// Només s'etiqueten les sessions de laboratori; la resta no porta etiqueta.
 export function EtiquetaTipus({ sessio }) {
-  if (!sessio.tipus) return <Pendent nota="Aula o laboratori" enLinia />
-  return (
-    <span className={`tipus tipus--${sessio.tipus}`}>
-      {PLANTILLES[sessio.tipus].nom}
-      {sessio.tipusPerConfirmar && CONFIG.modeRevisio ? ' (per confirmar)' : ''}
-    </span>
-  )
+  if (sessio.tipus !== 'laboratori') return null
+  return <span className="tipus tipus--laboratori">{PLANTILLES.laboratori.nom}</span>
 }
 
 function FilaSessio({ sa, sessio }) {
@@ -27,7 +23,7 @@ function FilaSessio({ sa, sessio }) {
         {definida ? <Text>{sessio.titol}</Text> : CONFIG.modeRevisio ? <Pendent nota={sessio.titol.nota} enLinia /> : 'Pròximament'}
       </span>
       <span className="fila__meta">
-        {definida || CONFIG.modeRevisio ? <EtiquetaTipus sessio={sessio} /> : null}
+        <EtiquetaTipus sessio={sessio} />
         {sessio.estat === 'feta' ? <span className="feta">Feta</span> : null}
       </span>
     </>
@@ -75,6 +71,7 @@ export default function PaginaSA({ sa }) {
       {sa.competencies?.length ? (
         <>
           <h2>Competències que treballarem</h2>
+          <h3 className="subtitol">Específiques de la matèria</h3>
           <ul className="competencies">
             {sa.competencies.map((codi) => (
               <li key={codi}>
@@ -85,6 +82,21 @@ export default function PaginaSA({ sa }) {
               </li>
             ))}
           </ul>
+          {sa.transversals?.length ? (
+            <>
+              <h3 className="subtitol">Transversals</h3>
+              <ul className="competencies competencies--trans">
+                {sa.transversals.map((codi) => (
+                  <li key={codi}>
+                    <strong>{codi}</strong>
+                    <span>
+                      <Text>{textTransversal(codi)}</Text>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
         </>
       ) : null}
 

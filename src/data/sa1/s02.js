@@ -6,7 +6,6 @@ export default {
   ...aulaBuida(),
   num: 2,
   titol: "Els nivells d'organització",
-  tipusPerConfirmar: true,
   estat: 'feta',
   activitat: [
     'Visualitza aquests vídeos i anota el que veus. Exemple: Escriptori > Bolígraf > Punta metàl·lica…',

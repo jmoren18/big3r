@@ -36,10 +36,10 @@ export const laboratoriBuida = () => ({
   siHasFaltat: pendent('Què ha de fer qui ha faltat')
 })
 
-// Sessió de la qual encara no se sap res.
+// Sessió de la qual encara no se sap res. Si no es diu el contrari, és d'aula.
 export const sessioPerDefinir = (num) => ({
+  ...aulaBuida(),
   num,
   titol: pendent(`Títol de la sessió ${num}`),
-  tipus: null,
   estat: 'pendent'
 })

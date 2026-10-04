@@ -65,7 +65,38 @@ export default function ElCurs() {
               </li>
             ))}
           </ul>
-          <p className="nota-eina">Al costat de cada competència hi ha les situacions d'aprenentatge on la treballarem.</p>
+          <p className="nota-eina">Sota cada competència hi ha les situacions d'aprenentatge on la treballarem.</p>
+        </section>
+
+        <section className="fase">
+          <h2>També aprendrem a…</h2>
+          <p>Són competències transversals: es treballen a totes les matèries.</p>
+          {c.transversals.map((g) => (
+            <div key={g.grup} className="grup-trans">
+              <h3 className="subtitol">{g.grup}</h3>
+              <ul className="competencies competencies--trans">
+                {g.items.map(([codi, text, on]) => (
+                  <li key={codi}>
+                    <strong>{codi}</strong>
+                    <span>
+                      <Text>{text}</Text>
+                      <span className="on-es-treballa">
+                        {on ? (
+                          <span className="xip-sa">{on}</span>
+                        ) : (
+                          sasDeCompetencia(codi).map((sa) => (
+                            <span key={sa.id} className="xip-sa" title={sa.titol}>
+                              SA{sa.num}
+                            </span>
+                          ))
+                        )}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
 
         <section className="fase">

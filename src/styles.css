@@ -1454,3 +1454,28 @@ ol.solucio {
   border-color: var(--blau);
   color: var(--blau);
 }
+
+.subtitol {
+  margin: 0.4rem 0 0;
+  font-family: var(--lletra-titol);
+  font-size: 1.05rem;
+  color: var(--tinta-suau);
+}
+.competencies--trans li {
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+}
+.competencies--trans strong {
+  color: var(--rosa);
+}
+.xip-sa--trans {
+  border-style: dashed;
+}
+.porta--activa .xip-sa--trans {
+  border-color: var(--rosa);
+  color: var(--rosa);
+}
+.grup-trans {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}

@@ -1,6 +1,6 @@
 import { CONFIG } from '../config.js'
 import { SAS } from '../data/curs.js'
-import { textCompetencia } from '../data/curs-info.js'
+import { textCompetencia, textTransversal } from '../data/curs-info.js'
 import { Enllac } from '../router.jsx'
 import Mostra from '../components/Mostra.jsx'
 import Text from '../components/Text.jsx'
@@ -16,9 +16,17 @@ function Portaobjectes({ sa }) {
           {sa.publicada ? <Text>{`${sa.sessions.length} sessions. Entra-hi.`}</Text> : 'Pròximament'}
         </span>
         {sa.competencies?.length ? (
-          <span className="porta__comp" aria-label={`Competències: ${sa.competencies.join(', ')}`}>
+          <span
+            className="porta__comp"
+            aria-label={`Competències: ${[...sa.competencies, ...(sa.transversals || [])].join(', ')}`}
+          >
             {sa.competencies.map((c) => (
               <span key={c} className="xip-sa" title={textCompetencia(c)}>
+                {c}
+              </span>
+            ))}
+            {(sa.transversals || []).map((c) => (
+              <span key={c} className="xip-sa xip-sa--trans" title={textTransversal(c)}>
                 {c}
               </span>
             ))}

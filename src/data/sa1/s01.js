@@ -6,7 +6,6 @@ export default {
   ...aulaBuida(),
   num: 1,
   titol: 'Presentació i votació dissonant',
-  tipusPerConfirmar: true,
   estat: 'feta',
   activitat: [
     'Presentació del curs: material, com s’organitza el curs, què aprendrem i avaluació.',

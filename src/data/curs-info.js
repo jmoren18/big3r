@@ -21,6 +21,35 @@ export const CURS_INFO = {
     ['C5', 'Generar hàbits saludables i sostenibles envers el medi ambient.'],
     ['C6', 'Analitzar els elements del paisatge i veure la seva evolució.']
   ],
+  // Competències transversals, amb el text de la programació didàctica.
+  // Només hi ha les que la programació vincula a alguna SA.
+  transversals: [
+    {
+      grup: 'Competència ciutadana',
+      items: [
+        ['CC2', 'Conèixer i assumir els valors democràtics i les lleis.'],
+        ['CC3', 'Analitzar problemes socials i tractar-los des del diàleg i el respecte.'],
+        ['CC4', 'Conèixer els riscos per al planeta i actuar de manera sostenible.']
+      ]
+    },
+    {
+      grup: 'Competència emprenedora',
+      items: [['CE3', 'Generar idees i solucions valuoses. Prendre decisions de manera raonada.']]
+    },
+    {
+      grup: "Competència personal, social i d'aprendre a aprendre",
+      items: [
+        ['CPS1', 'Expressar les emocions i regular-les de manera positiva i autònoma.'],
+        ['CPS2', 'Conèixer els riscos per a la salut i consolidar hàbits saludables.'],
+        ['CPS3', 'Treballar en grup comprenent i respectant els altres.', 'A les SA de treball en grup'],
+        ['CPS4', "Fer autoavaluacions sobre el propi procés d'aprenentatge."]
+      ]
+    },
+    {
+      grup: 'Competència digital',
+      items: [['CD2', 'Utilitzar, crear i gestionar continguts digitals per aprendre millor.']]
+    }
+  ],
   avaluacio: {
     text: "L'avaluació serà per competències.",
     nivells: [
@@ -38,3 +67,6 @@ export const CURS_INFO = {
 }
 
 export const textCompetencia = (codi) => CURS_INFO.competencies.find(([c]) => c === codi)?.[1] || ''
+
+export const textTransversal = (codi) =>
+  CURS_INFO.transversals.flatMap((g) => g.items).find(([c]) => c === codi)?.[1] || ''

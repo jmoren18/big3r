@@ -6,21 +6,25 @@ import { sa1 } from './sa1/index.js'
 // `competencies`: competències específiques que es treballen a cada SA, segons la
 // programació didàctica de BiG 3r 2026-2027 (columna «Situacions d'aprenentatge»
 // de cada CE). C1…C6 són les CE1…CE6 amb el text per a l'alumnat (curs-info.js).
+// `transversals`: competències transversals de cada SA, segons la mateixa programació.
+// La CPS4 es treballa a totes les SA.
 export const SAS = [
   sa1,
-  { id: 'sa2', num: 2, titol: 'Qui decideix què menges?', publicada: false, competencies: ['C1', 'C3', 'C4', 'C5'] },
-  { id: 'sa3', num: 3, titol: 'Qui decideix què vols?', publicada: false, competencies: ['C2', 'C3', 'C4', 'C5'] },
-  { id: 'sa4', num: 4, titol: 'Qui decideix qui ets?', publicada: false, competencies: ['C1', 'C2', 'C5'] },
-  { id: 'sa5', num: 5, titol: 'Qui et defensa?', publicada: false, competencies: ['C2', 'C3', 'C4'] },
+  { id: 'sa2', num: 2, titol: 'Qui decideix què menges?', publicada: false, competencies: ['C1', 'C3', 'C4', 'C5'], transversals: ['CE3', 'CPS4'] },
+  { id: 'sa3', num: 3, titol: 'Qui decideix què vols?', publicada: false, competencies: ['C2', 'C3', 'C4', 'C5'], transversals: ['CPS2', 'CPS4', 'CD2'] },
+  { id: 'sa4', num: 4, titol: 'Qui decideix qui ets?', publicada: false, competencies: ['C1', 'C2', 'C5'], transversals: ['CC3', 'CPS1', 'CPS2', 'CPS4'] },
+  { id: 'sa5', num: 5, titol: 'Qui et defensa?', publicada: false, competencies: ['C2', 'C3', 'C4'], transversals: ['CC2', 'CPS4'] },
   {
     id: 'sa6',
     num: 6,
     titol: 'Qui decideix el teu paisatge?',
     publicada: false,
-    competencies: ['C1', 'C2', 'C3', 'C4', 'C5', 'C6']
+    competencies: ['C1', 'C2', 'C3', 'C4', 'C5', 'C6'],
+    transversals: ['CC3', 'CC4', 'CPS4']
   }
 ]
 
-export const sasDeCompetencia = (codi) => SAS.filter((sa) => (sa.competencies || []).includes(codi))
+export const sasDeCompetencia = (codi) =>
+  SAS.filter((sa) => (sa.competencies || []).includes(codi) || (sa.transversals || []).includes(codi))
 
 export const trobaSA = (id) => SAS.find((sa) => sa.id === id)

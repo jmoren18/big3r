@@ -61,7 +61,7 @@ export default function PaginaSessio({ sa, sessio }) {
       <h1>{titolPendent ? <Pendent nota={sessio.titol.nota} enLinia /> : <Text>{sessio.titol}</Text>}</h1>
       <p className="sessio__meta">
         <EtiquetaTipus sessio={sessio} />
-        {plantilla ? <span>{plantilla.grup}</span> : null}
+        {sessio.tipus === 'laboratori' ? <span>{plantilla.grup}</span> : null}
         <span>{CONFIG.duradaSessio} minuts</span>
         {sessio.estat === 'feta' ? <span className="feta">Feta</span> : null}
       </p>

@@ -4,7 +4,6 @@ export default {
   ...aulaBuida(),
   num: 3,
   titol: 'Exercicis',
-  tipusPerConfirmar: true,
   estat: 'feta',
   activitat: "Practiquem els nivells d'organització amb els exercicis.",
   recursos: [
