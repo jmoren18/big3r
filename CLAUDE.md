@@ -14,3 +14,6 @@
 - Abans de donar una feina per acabada: `npm run build` i mirar la pàgina a 400 px i a 1200 px.
 - El web no recull dades dels alumnes. No hi afegeixis formularis que enviïn res sense que la
   professora ho demani.
+- Un joc és un fitxer de dades com `src/data/sa1/joc-nivells.js`, afegit a `jocs` de la seva SA. Els tipus
+  d'exercici disponibles són a `src/joc/tipus.jsx`: ordena, relaciona, buits, classifica, vf, cadena i oberta.
+  Els enunciats i les solucions han de venir dels materials de la professora.

@@ -1,6 +1,7 @@
 import { CONFIG } from '../config.js'
 import { esPendent, esPerVersio, tria } from '../pendent.js'
 import { usePrefs } from '../prefs.jsx'
+import { Enllac } from '../router.jsx'
 import Pendent from './Pendent.jsx'
 import Text from './Text.jsx'
 
@@ -54,12 +55,16 @@ export default function Contingut({ valor, llista }) {
 
 export function Recursos({ valor }) {
   if (esPendent(valor)) return <Pendent nota={valor.nota} />
-  const visibles = CONFIG.modeRevisio ? valor : valor.filter((r) => !esPendent(r.url))
+  const visibles = CONFIG.modeRevisio ? valor : valor.filter((r) => r.ruta || !esPendent(r.url))
   return (
     <ul className="recursos">
       {visibles.map((r, i) => (
         <li key={i}>
-          {esPendent(r.url) ? (
+          {r.ruta ? (
+            <Enllac a={r.ruta}>
+              <Text>{r.nom}</Text>
+            </Enllac>
+          ) : esPendent(r.url) ? (
             <>
               <span>
                 <Text>{r.nom}</Text>
@@ -71,6 +76,7 @@ export function Recursos({ valor }) {
               <Text>{r.nom}</Text>
             </a>
           )}
+          {r.nota ? <span className="recursos__nota">{r.nota}</span> : null}
         </li>
       ))}
     </ul>
@@ -106,4 +112,22 @@ export function ExitTiquet({ valor }) {
 
 // Un recurs compta com a visible si almenys un enllaç ja existeix.
 export const teRecursos = (valor) =>
-  Array.isArray(valor) && (CONFIG.modeRevisio || valor.some((r) => !esPendent(r.url)))
+  Array.isArray(valor) && (CONFIG.modeRevisio || valor.some((r) => r.ruta || !esPendent(r.url)))
+
+// Apunts numerats: títol en negreta, explicació i, si cal, una marca.
+export function Apunts({ valor }) {
+  if (esPendent(valor)) return <Pendent nota={valor.nota} />
+  return (
+    <ol className="apunts">
+      {valor.map((a) => (
+        <li key={a.titol}>
+          <strong>
+            <Text>{a.titol}</Text>.
+          </strong>{' '}
+          <Text>{a.text}</Text>
+          {a.marca ? <span className="apunts__marca">{a.marca}</span> : null}
+        </li>
+      ))}
+    </ol>
+  )
+}

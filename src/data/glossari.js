@@ -23,5 +23,18 @@ export const GLOSSARI = [
   { formes: ['votació'], es: 'votación', uk: 'голосування', ru: 'голосование', ar: 'تصويت', ur: 'ووٹنگ', hi: 'मतदान', pa: 'ਵੋਟਿੰਗ' },
   { formes: ['exercicis'], es: 'ejercicios', uk: 'вправи', ru: 'упражнения', ar: 'تمارين', ur: 'مشقیں', hi: 'अभ्यास', pa: 'ਅਭਿਆਸ' },
   { formes: ['materials'], es: 'materiales', uk: 'матеріали', ru: 'материалы', ar: 'مواد', ur: 'مواد', hi: 'सामग्री', pa: 'ਸਮੱਗਰੀ' },
-  { formes: ['aula'], es: 'aula', uk: 'клас', ru: 'класс', ar: 'قاعة الدرس', ur: 'کلاس روم', hi: 'कक्षा', pa: 'ਕਲਾਸਰੂਮ' }
+  { formes: ['aula'], es: 'aula', uk: 'клас', ru: 'класс', ar: 'قاعة الدرس', ur: 'کلاس روم', hi: 'कक्षा', pa: 'ਕਲਾਸਰੂਮ' },
+  { formes: ['nivell', 'nivells'], es: 'nivel', uk: 'рівень', ru: 'уровень', ar: 'مستوى', ur: 'سطح', hi: 'स्तर', pa: 'ਪੱਧਰ' },
+  { formes: ['matèria inerta'], es: 'materia inerte', uk: 'нежива речовина', ru: 'неживое вещество', ar: 'مادة غير حية', ur: 'بے جان مادہ', hi: 'निर्जीव पदार्थ', pa: 'ਨਿਰਜੀਵ ਪਦਾਰਥ' },
+  { formes: ['matèria'], es: 'materia', uk: 'речовина', ru: 'вещество', ar: 'مادة', ur: 'مادہ', hi: 'पदार्थ', pa: 'ਪਦਾਰਥ' },
+  { formes: ['àtom', 'àtoms'], es: 'átomo', uk: 'атом', ru: 'атом', ar: 'ذرة', ur: 'ایٹم', hi: 'परमाणु', pa: 'ਪਰਮਾਣੂ' },
+  { formes: ['molècula', 'molècules'], es: 'molécula', uk: 'молекула', ru: 'молекула', ar: 'جزيء', ur: 'مالیکیول', hi: 'अणु', pa: 'ਅਣੂ' },
+  { formes: ['organisme', 'organismes'], es: 'organismo', uk: 'організм', ru: 'организм', ar: 'كائن حي', ur: 'جاندار', hi: 'जीव', pa: 'ਜੀਵ' },
+  { formes: ['aparell', 'aparells'], es: 'aparato', uk: 'система органів', ru: 'система органов', ar: 'جهاز', ur: 'نظام', hi: 'तंत्र', pa: 'ਪ੍ਰਣਾਲੀ' },
+  { formes: ['sistema', 'sistemes'], es: 'sistema', uk: 'система', ru: 'система', ar: 'جهاز', ur: 'نظام', hi: 'तंत्र', pa: 'ਪ੍ਰਣਾਲੀ' },
+  { formes: ['població', 'poblacions'], es: 'población', uk: 'популяція', ru: 'популяция', ar: 'جماعة أحيائية', ur: 'آبادی', hi: 'समष्टि', pa: 'ਆਬਾਦੀ' },
+  { formes: ['comunitat'], es: 'comunidad', uk: 'угруповання', ru: 'сообщество', ar: 'مجتمع أحيائي', ur: 'حیاتیاتی برادری', hi: 'समुदाय', pa: 'ਭਾਈਚਾਰਾ' },
+  { formes: ['ecosistema', 'ecosistemes'], es: 'ecosistema', uk: 'екосистема', ru: 'экосистема', ar: 'نظام بيئي', ur: 'ماحولیاتی نظام', hi: 'पारिस्थितिकी तंत्र', pa: 'ਈਕੋਸਿਸਟਮ' },
+  { formes: ['biosfera'], es: 'biosfera', uk: 'біосфера', ru: 'биосфера', ar: 'المحيط الحيوي', ur: 'حیاتی کرہ', hi: 'जैवमंडल', pa: 'ਜੀਵ-ਮੰਡਲ' },
+  { formes: ['espècie', 'espècies'], es: 'especie', uk: 'вид', ru: 'вид', ar: 'نوع', ur: 'نوع', hi: 'प्रजाति', pa: 'ਪ੍ਰਜਾਤੀ' }
 ]

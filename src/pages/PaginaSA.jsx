@@ -78,6 +78,24 @@ export default function PaginaSA({ sa }) {
         ))}
       </ol>
 
+      {sa.jocs?.length ? (
+        <>
+          <h2>Per practicar</h2>
+          <ul className="sessions">
+            {sa.jocs.map((j) => (
+              <li key={j.id}>
+                <Enllac a={`/${sa.id}/joc/${j.id}`} className="fila fila--sola">
+                  <span className="fila__titol">
+                    <Text>{j.titol}</Text>
+                  </span>
+                  <span className="fila__meta">{j.exercicis.length} exercicis amb correcció</span>
+                </Enllac>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+
       <h2>Quan acabem</h2>
       <Enllac a={`/${sa.id}/autoavaluacio`} className="fila fila--sola">
         <span className="fila__titol">

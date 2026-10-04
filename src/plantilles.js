@@ -1,5 +1,6 @@
 // Les dues plantilles de sessió. Cada fase llegeix un camp de la sessió.
 // `llista: 'passos'` pinta una llista numerada; `especial` fa servir un component propi.
+// Una fase que la sessió no té (per exemple `apunts`) no es pinta.
 export const PLANTILLES = {
   aula: {
     nom: 'Aula',
@@ -8,6 +9,7 @@ export const PLANTILLES = {
       { clau: 'pregunta', titol: 'Per començar' },
       { clau: 'objectius', titol: 'Què aprendràs avui' },
       { clau: 'activitat', titol: 'Què farem' },
+      { clau: 'apunts', titol: 'Per recordar', especial: 'apunts' },
       { clau: 'posadaEnComu', titol: 'Ho posem en comú' },
       { clau: 'recursos', titol: 'Materials', especial: 'recursos' },
       { clau: 'exitTiquet', titol: 'Exit tiquet', especial: 'exit' }

@@ -3,7 +3,7 @@ import { PLANTILLES } from '../plantilles.js'
 import { esPendent } from '../pendent.js'
 import { usePrefs } from '../prefs.jsx'
 import { Enllac } from '../router.jsx'
-import Contingut, { ExitTiquet, Recursos, teContingut, teRecursos } from '../components/Contingut.jsx'
+import Contingut, { Apunts, ExitTiquet, Recursos, teContingut, teRecursos } from '../components/Contingut.jsx'
 import Pendent from '../components/Pendent.jsx'
 import Text from '../components/Text.jsx'
 import { EtiquetaTipus } from './PaginaSA.jsx'
@@ -17,7 +17,9 @@ function Fase({ fase, sessio }) {
     const visible =
       fase.especial === 'recursos'
         ? teRecursos(valor)
-        : fase.especial === 'exit'
+        : fase.especial === 'apunts'
+          ? !esPendent(valor)
+          : fase.especial === 'exit'
           ? teContingut(valor.preguntes, versio)
           : teContingut(valor, versio)
     if (!visible) return null
@@ -30,6 +32,8 @@ function Fase({ fase, sessio }) {
       </h2>
       {fase.especial === 'recursos' ? (
         <Recursos valor={valor} />
+      ) : fase.especial === 'apunts' ? (
+        <Apunts valor={valor} />
       ) : fase.especial === 'exit' ? (
         <ExitTiquet valor={valor} />
       ) : (

@@ -8,17 +8,22 @@ import Portada from './pages/Portada.jsx'
 import PaginaSA from './pages/PaginaSA.jsx'
 import PaginaSessio from './pages/PaginaSessio.jsx'
 import Autoavaluacio from './pages/Autoavaluacio.jsx'
+import Joc from './pages/Joc.jsx'
 import NoTrobada from './pages/NoTrobada.jsx'
 
 function Pagina() {
   const { ruta } = useRuta()
   if (ruta === '/') return <Portada />
 
-  const m = ruta.match(/^\/(sa\d+)(?:\/(s\/(\d+)|autoavaluacio))?\/?$/)
+  const m = ruta.match(/^\/(sa\d+)(?:\/(s\/(\d+)|autoavaluacio|joc\/([a-z0-9-]+)))?\/?$/)
   const sa = m && trobaSA(m[1])
   if (!sa || !sa.publicada) return <NoTrobada sa={sa} />
   if (!m[2]) return <PaginaSA sa={sa} />
   if (m[2] === 'autoavaluacio') return <Autoavaluacio sa={sa} />
+  if (m[4]) {
+    const joc = (sa.jocs || []).find((j) => j.id === m[4])
+    return joc ? <Joc key={joc.id} sa={sa} joc={joc} /> : <NoTrobada sa={sa} />
+  }
 
   const sessio = sa.sessions.find((s) => s.num === Number(m[3]))
   return sessio ? <PaginaSessio sa={sa} sessio={sessio} /> : <NoTrobada sa={sa} />

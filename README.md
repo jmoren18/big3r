@@ -9,6 +9,7 @@ Portal de Biologia i Geologia de 3r d'ESO de l'Institut Sant Quirze (Lloret de M
 - Tres versions de cada sessió: A adaptada, B estàndard (la que surt per defecte) i C enriquiment.
 - Ajuda de traducció en castellà, ucraïnès, rus, àrab, urdú, hindi i panjabi: en triar un idioma, les paraules del glossari queden subratllades i mostren la traducció. Les traduccions s'han de validar amb parlants nadius.
 - Exit tiquet a cada sessió, en paper per defecte i amb formulari si s'hi posa un enllaç, i autoavaluació NA/AS/AN/AE imprimible al final de la SA.
+- Jocs de pràctica amb correcció automàtica (per ara, el dels nivells d'organització).
 - Temporitzador i sonòmetre per projectar a l'aula.
 
 No es recull cap dada dels alumnes. Tot queda al navegador de cadascú.
@@ -19,6 +20,7 @@ No es recull cap dada dels alumnes. Tot queda al navegador de cadascú.
 | --- | --- |
 | Títols de les SA i quines estan publicades | `src/data/curs.js` |
 | Sessions de la SA1 | `src/data/sa1/s01.js`, `s02.js`… i `index.js` |
+| Jocs de pràctica de la SA1 | `src/data/sa1/joc-nivells.js` |
 | Fases de cada plantilla | `src/plantilles.js` |
 | Paraules amb traducció | `src/data/glossari.js` |
 | Idiomes, versions i mode revisió | `src/config.js` |
