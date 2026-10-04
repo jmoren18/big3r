@@ -1,5 +1,7 @@
 import { pendent } from '../../pendent.js'
 
+// Exit tiquet: per defecte es respon en paper. Si un dia cal fer-lo amb
+// formulari, es posa l'enllaç a `formulari` i surt el botó «Respon al formulari».
 const perVersio = (que) => ({
   A: pendent(`${que} (versió A)`),
   B: pendent(`${que} (versió B)`),

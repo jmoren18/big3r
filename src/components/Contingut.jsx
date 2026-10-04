@@ -42,7 +42,11 @@ export default function Contingut({ valor, llista }) {
 
   return (
     <>
-      {varia ? <p className="marca-versio">Versió {versio}</p> : null}
+      {varia ? (
+        <p className="marca-versio">
+          Versió {versio}, {CONFIG.versions.find((x) => x.id === versio)?.nom}
+        </p>
+      ) : null}
       {cos}
     </>
   )
@@ -91,10 +95,10 @@ export function ExitTiquet({ valor }) {
       )}
       {valor.formulari ? (
         <a className="boto" href={valor.formulari} target="_blank" rel="noreferrer">
-          Obre el formulari
+          Respon al formulari
         </a>
-      ) : (
-        <Pendent nota="On responen els alumnes: en paper o en un formulari" />
+      ) : esPendent(preguntes) ? null : (
+        <p className="nota-eina">Respon en paper.</p>
       )}
     </>
   )

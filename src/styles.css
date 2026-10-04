@@ -178,6 +178,11 @@ a {
   color: var(--tinta-suau);
   margin-right: 0.35rem;
 }
+.versions__nom {
+  margin-left: 0.35rem;
+  min-width: 6.5rem;
+  font-weight: 700;
+}
 .versions button {
   font: inherit;
   font-family: var(--lletra-titol);
@@ -591,7 +596,7 @@ a.fila:hover {
 .terme__tr {
   display: none;
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   bottom: calc(100% + 0.35rem);
   z-index: 5;
   width: max-content;

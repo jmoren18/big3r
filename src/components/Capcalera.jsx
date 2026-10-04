@@ -8,10 +8,18 @@ export function SelectorVersio() {
     <div className="versions" role="group" aria-label="Versió de la sessió">
       <span className="versions__titol">Versió</span>
       {CONFIG.versions.map((v) => (
-        <button key={v.id} type="button" aria-pressed={versio === v.id} onClick={() => setVersio(v.id)}>
+        <button
+          key={v.id}
+          type="button"
+          aria-pressed={versio === v.id}
+          aria-label={`Versió ${v.id}, ${v.nom}`}
+          title={v.nom}
+          onClick={() => setVersio(v.id)}
+        >
           {v.id}
         </button>
       ))}
+      <span className="versions__nom">{CONFIG.versions.find((v) => v.id === versio)?.nom}</span>
     </div>
   )
 }
