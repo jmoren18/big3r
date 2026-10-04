@@ -1,5 +1,6 @@
 import { CONFIG } from '../config.js'
 import { SAS } from '../data/curs.js'
+import { textCompetencia } from '../data/curs-info.js'
 import { Enllac } from '../router.jsx'
 import Mostra from '../components/Mostra.jsx'
 import Text from '../components/Text.jsx'
@@ -14,6 +15,15 @@ function Portaobjectes({ sa }) {
         <span className="porta__estat">
           {sa.publicada ? <Text>{`${sa.sessions.length} sessions. Entra-hi.`}</Text> : 'Pròximament'}
         </span>
+        {sa.competencies?.length ? (
+          <span className="porta__comp" aria-label={`Competències: ${sa.competencies.join(', ')}`}>
+            {sa.competencies.map((c) => (
+              <span key={c} className="xip-sa" title={textCompetencia(c)}>
+                {c}
+              </span>
+            ))}
+          </span>
+        ) : null}
       </span>
       <Mostra tenyida={sa.publicada} llavor={sa.num} />
     </>

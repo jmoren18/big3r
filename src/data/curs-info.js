@@ -36,3 +36,5 @@ export const CURS_INFO = {
     text: 'Podeu decorar-la amb dibuixos o imatges dels temes que treballarem.'
   }
 }
+
+export const textCompetencia = (codi) => CURS_INFO.competencies.find(([c]) => c === codi)?.[1] || ''

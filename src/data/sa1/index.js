@@ -12,6 +12,7 @@ export const sa1 = {
   num: 1,
   titol: 'Qui viu dins teu?',
   publicada: true,
+  competencies: ['C1', 'C3', 'C5'],
   presentacio: pendent('Dues o tres frases per presentar la SA als alumnes'),
   producteFinal: pendent('Producte final de la SA'),
   // 12 sessions. Les cinc primeres ja s'han fet; de la 6 a la 12 falta definir-les.

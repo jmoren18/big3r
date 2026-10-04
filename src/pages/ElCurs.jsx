@@ -1,5 +1,5 @@
 import { CURS_INFO } from '../data/curs-info.js'
-import { trobaSA } from '../data/curs.js'
+import { sasDeCompetencia, trobaSA } from '../data/curs.js'
 import { Enllac } from '../router.jsx'
 import Text from '../components/Text.jsx'
 
@@ -54,10 +54,18 @@ export default function ElCurs() {
                 <strong>{codi}</strong>
                 <span>
                   <Text>{text}</Text>
+                  <span className="on-es-treballa">
+                    {sasDeCompetencia(codi).map((sa) => (
+                      <span key={sa.id} className="xip-sa" title={sa.titol}>
+                        SA{sa.num}
+                      </span>
+                    ))}
+                  </span>
                 </span>
               </li>
             ))}
           </ul>
+          <p className="nota-eina">Al costat de cada competència hi ha les situacions d'aprenentatge on la treballarem.</p>
         </section>
 
         <section className="fase">

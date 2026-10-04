@@ -1429,3 +1429,28 @@ ol.solucio {
   font-family: var(--lletra-titol);
   color: var(--blau);
 }
+
+/* ── Competències per SA ───────────────────────────────── */
+.xip-sa {
+  display: inline-block;
+  padding: 0 0.5rem;
+  border: 1px solid var(--vidre-vora);
+  border-radius: 999px;
+  background: var(--superficie);
+  color: var(--tinta-suau);
+  font-family: var(--lletra-titol);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.on-es-treballa,
+.porta__comp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.3rem;
+}
+.porta--activa .xip-sa {
+  border-color: var(--blau);
+  color: var(--blau);
+}

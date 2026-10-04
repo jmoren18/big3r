@@ -1,6 +1,7 @@
 import { CONFIG } from '../config.js'
 import { PLANTILLES } from '../plantilles.js'
 import { esPendent } from '../pendent.js'
+import { textCompetencia } from '../data/curs-info.js'
 import { Enllac } from '../router.jsx'
 import Mostra from '../components/Mostra.jsx'
 import Pendent from '../components/Pendent.jsx'
@@ -70,6 +71,22 @@ export default function PaginaSA({ sa }) {
           <Text>{sa.producteFinal}</Text>
         </p>
       )}
+
+      {sa.competencies?.length ? (
+        <>
+          <h2>Competències que treballarem</h2>
+          <ul className="competencies">
+            {sa.competencies.map((codi) => (
+              <li key={codi}>
+                <strong>{codi}</strong>
+                <span>
+                  <Text>{textCompetencia(codi)}</Text>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
 
       <h2>Sessions</h2>
       <ol className="sessions">
