@@ -4,9 +4,26 @@
 //
 // A `respostes`, la primera és la que es mostra com a solució; les altres
 // també es donen per bones.
+//
+// `pista`: quan l'alumne s'equivoca, surt la definició del nivell dels apunts de la sessió 2.
+// `frase` (exercici 8): inicis de frase proposats per Claude (revisió del 12-10-2026): cal revisar-los.
+import { proposta } from '../../pendent.js'
+import { NIVELLS_ORGANITZACIO } from './nivells.js'
+
+const DEFINICIONS = Object.fromEntries(
+  NIVELLS_ORGANITZACIO.map((n) => [n.titol.toLowerCase().replace(/^nivell (de |d')?/, ''), n.text])
+)
+const pistaNivell = (nom) => {
+  const clau = nom.toLowerCase().replace(/^nivell (de |d')?/, '')
+  const text = DEFINICIONS[clau] ?? (/^(aparell|sistema)/.test(clau) ? DEFINICIONS['sistemes i aparells'] : null)
+  return text ? `${nom.charAt(0).toUpperCase()}${nom.slice(1)}: ${text}` : null
+}
+
 export const jocNivells = {
   id: 'nivells',
   titol: "Els nivells d'organització",
+  // Sessió on es fa el joc. Les sessions següents en repassen preguntes a «Recordes?».
+  sessio: 3,
   entrada: 'Vuit exercicis per practicar. Pots repetir-los tantes vegades com vulguis.',
 
   recorda: {
@@ -57,6 +74,7 @@ export const jocNivells = {
       parts: [
         {
           tipus: 'relaciona',
+          pista: pistaNivell,
           opcions: ['Òrgan', 'Nivell subatòmic', 'Organisme', 'Molecular', 'Aparell o sistema', 'Cel·lular', 'Atòmic', 'Teixit'],
           files: [
             { text: 'Una molècula de glucosa', resposta: 'Molecular' },
@@ -79,7 +97,7 @@ export const jocNivells = {
           tipus: 'buits',
           frases: [
             { abans: "La unitat més petita de matèria que manté les propietats d'un element és l'", despres: '.', respostes: ['àtom'] },
-            { abans: 'Diverses cèl·lules iguals que fan una mateixa funció formen un ', despres: '.', respostes: ['teixit'] },
+            { abans: 'Diverses cèl·lules semblants que fan una mateixa funció formen un ', despres: '.', respostes: ['teixit'] },
             {
               abans: 'Diversos òrgans que treballen junts formen un ',
               despres: '.',
@@ -98,6 +116,7 @@ export const jocNivells = {
       parts: [
         {
           tipus: 'classifica',
+          pista: pistaNivell,
           grups: [
             { id: 'totes', nom: 'A la matèria inerta i la viva' },
             { id: 'vius', nom: 'Només als éssers vius' }
@@ -147,8 +166,9 @@ export const jocNivells = {
           cadena: [
             { fix: 'Cèl·lula nerviosa' },
             { respostes: ['teixit nerviós'] },
-            // El solucionari diu «cervell». També es donen per bons altres òrgans del sistema nerviós.
-            { respostes: ['cervell', 'encèfal', 'medul·la espinal'] },
+            // El solucionari diu «cervell». També es donen per bons altres òrgans del sistema nerviós
+            // (la professora hi va afegir «nervi» i «medul·la» el 12-10-2026).
+            { respostes: ['cervell', 'encèfal', 'medul·la espinal', 'medul·la', 'nervi', 'nervis'] },
             { respostes: ['sistema nerviós'] },
             { fix: 'Ésser humà' }
           ]
@@ -168,6 +188,7 @@ export const jocNivells = {
         {
           tipus: 'relaciona',
           subtitol: 'Quin nivell és?',
+          pista: pistaNivell,
           opcions: ['Població', 'Comunitat', 'Ecosistema', 'Biosfera'],
           files: [
             { text: 'Tots els conills que viuen en un bosc.', resposta: 'Població' },
@@ -187,6 +208,7 @@ export const jocNivells = {
           cita: 'Una cèl·lula és més senzilla que una molècula, perquè és molt petita.',
           pregunta: 'Té raó? Per què? Fes servir les paraules molècula, cèl·lula i complexitat.',
           paraules: ['molècula', 'cèl·lula', 'complexitat'],
+          frase: proposta(['Crec que el company té raó / no té raó, perquè…', 'Una cèl·lula està formada per…', 'La mida i la complexitat…']),
           model:
             'No té raó: la mida no determina la complexitat. La cèl·lula està feta de moltes molècules organitzades; és un nivell superior i més complex.'
         }

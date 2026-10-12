@@ -40,5 +40,25 @@ export const GLOSSARI = [
   { formes: ['estoig'], es: 'estuche', uk: 'пенал', ru: 'пенал', ar: 'مقلمة', ur: 'پنسل بکس', hi: 'पेंसिल बॉक्स', pa: 'ਪੈਨਸਿਲ ਬਾਕਸ' },
   { formes: ['avaluació'], es: 'evaluación', uk: 'оцінювання', ru: 'оценивание', ar: 'تقييم', ur: 'جائزہ', hi: 'मूल्यांकन', pa: 'ਮੁਲਾਂਕਣ' },
   { formes: ['trimestre'], es: 'trimestre', uk: 'триместр', ru: 'триместр', ar: 'فصل دراسي', ur: 'سہ ماہی', hi: 'तिमाही', pa: 'ਤਿਮਾਹੀ' },
-  { formes: ['espècie', 'espècies'], es: 'especie', uk: 'вид', ru: 'вид', ar: 'نوع', ur: 'نوع', hi: 'प्रजाति', pa: 'ਪ੍ਰਜਾਤੀ' }
+  { formes: ['espècie', 'espècies'], es: 'especie', uk: 'вид', ru: 'вид', ar: 'نوع', ur: 'نوع', hi: 'प्रजाति', pa: 'ਪ੍ਰਜਾਤੀ' },
+
+  // Afegides a petició de la professora (revisió del 12-10-2026). Traduccions de Claude: cal validar-les.
+  // «viu» és alhora adjectiu (viu o no viu) i verb (qui viu dins teu), per això porta les dues traduccions.
+  { formes: ['viu', 'viva', 'vius', 'vives'], es: 'vivo · vive', uk: 'живий · живе', ru: 'живой · живёт', ar: 'حيّ · يعيش', ur: 'زندہ · رہتا ہے', hi: 'जीवित · रहता है', pa: 'ਜੀਵਿਤ · ਰਹਿੰਦਾ ਹੈ' },
+  { formes: ['inert', 'inerta', 'inerts', 'inertes'], es: 'inerte', uk: 'неживий', ru: 'неживой', ar: 'غير حيّ', ur: 'بے جان', hi: 'निर्जीव', pa: 'ਨਿਰਜੀਵ' },
+  { formes: ['organització'], es: 'organización', uk: 'організація', ru: 'организация', ar: 'تنظيم', ur: 'تنظیم', hi: 'संगठन', pa: 'ਸੰਗਠਨ' },
+  { formes: ['funció', 'funcions'], es: 'función', uk: 'функція', ru: 'функция', ar: 'وظيفة', ur: 'کام', hi: 'कार्य', pa: 'ਕਾਰਜ' },
+  { formes: ['conjunt'], es: 'conjunto', uk: 'сукупність', ru: 'совокупность', ar: 'مجموعة', ur: 'مجموعہ', hi: 'समूह', pa: 'ਸਮੂਹ' },
+  { formes: ['medi'], es: 'medio', uk: 'середовище', ru: 'среда', ar: 'وسط', ur: 'ماحول', hi: 'पर्यावरण', pa: 'ਵਾਤਾਵਰਣ' },
+  { formes: ['individu', 'individus'], es: 'individuo', uk: 'особина', ru: 'особь', ar: 'فرد', ur: 'فرد', hi: 'जीव', pa: 'ਜੀਵ' },
+  { formes: ['unicel·lular', 'unicel·lulars'], es: 'unicelular', uk: 'одноклітинний', ru: 'одноклеточный', ar: 'وحيد الخلية', ur: 'یک خلوی', hi: 'एककोशिकीय', pa: 'ਇੱਕ-ਸੈੱਲੀ' },
+  { formes: ['pluricel·lular', 'pluricel·lulars'], es: 'pluricelular', uk: 'багатоклітинний', ru: 'многоклеточный', ar: 'متعدد الخلايا', ur: 'کثیر خلوی', hi: 'बहुकोशिकीय', pa: 'ਬਹੁ-ਸੈੱਲੀ' },
+  { formes: ['cel·lular'], es: 'celular', uk: 'клітинний', ru: 'клеточный', ar: 'خلوي', ur: 'خلوی', hi: 'कोशिकीय', pa: 'ਸੈੱਲੀ' },
+  { formes: ['molecular'], es: 'molecular', uk: 'молекулярний', ru: 'молекулярный', ar: 'جزيئي', ur: 'مالیکیولی', hi: 'आणविक', pa: 'ਅਣਵੀ' },
+  { formes: ['atòmic'], es: 'atómico', uk: 'атомний', ru: 'атомный', ar: 'ذرّي', ur: 'ایٹمی', hi: 'परमाण्विक', pa: 'ਪਰਮਾਣੂ' },
+  { formes: ['subatòmic', 'subatòmica', 'subatòmics', 'subatòmiques'], es: 'subatómico', uk: 'субатомний', ru: 'субатомный', ar: 'دون ذرّي', ur: 'ذیلی ایٹمی', hi: 'उप-परमाण्विक', pa: 'ਉਪ-ਪਰਮਾਣੂ' },
+  { formes: ['senzill', 'senzilla', 'senzills', 'senzilles'], es: 'sencillo', uk: 'простий', ru: 'простой', ar: 'بسيط', ur: 'سادہ', hi: 'सरल', pa: 'ਸਰਲ' },
+  { formes: ['complex', 'complexa', 'complexos', 'complexes'], es: 'complejo', uk: 'складний', ru: 'сложный', ar: 'معقّد', ur: 'پیچیدہ', hi: 'जटिल', pa: 'ਗੁੰਝਲਦਾਰ' },
+  { formes: ['complexitat'], es: 'complejidad', uk: 'складність', ru: 'сложность', ar: 'تعقيد', ur: 'پیچیدگی', hi: 'जटिलता', pa: 'ਗੁੰਝਲਤਾ' },
+  { formes: ['assoliment'], es: 'logro', uk: 'досягнення', ru: 'достижение', ar: 'إنجاز', ur: 'حصول', hi: 'उपलब्धि', pa: 'ਪ੍ਰਾਪਤੀ' }
 ]
