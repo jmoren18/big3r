@@ -2,6 +2,8 @@
 
 - No inventis contingut didàctic. Si falta informació (preguntes, objectius, materials, durades,
   descriptors), deixa-la com a `pendent('què falta')` i demana-la a la professora.
+- Si la professora et demana que redactis tu un contingut, marca'l amb `proposta(...)` perquè el pugui
+  revisar. No el treguis tu: ho fa ella quan l'aprova.
 - Tot el text de cara a l'alumne és en català, amb frases curtes i vocabulari senzill: part del
   grup té poc domini del català.
 - Les sessions duren 50 minuts. N'hi ha de dos tipus: `aula` (grup sencer) i `laboratori` (mig grup).
@@ -9,7 +11,8 @@
 - Avaluació amb NA/AS/AN/AE, sense notes numèriques.
 - Una SA nova segueix el patró de `src/data/sa1/` i es publica posant `publicada: true` a `src/data/curs.js`.
 - Un camp pot ser igual per a tothom o diferent per versió: `{ A: ..., B: ..., C: ... }`.
-  A és l'adaptada, B l'estàndard i C la d'enriquiment.
+  A és per a pla individualitzat o aula d'acollida, B l'estàndard i C la d'enriquiment. A la A s'hi afegeixen
+  bastides; a la C, més exigència (justificar, transferir), no més exercicis.
 - L'exit tiquet es respon en paper. Només porta formulari si la professora en dona l'enllaç.
 - Cada paraula nova del glossari necessita traducció als set idiomes de `src/config.js`.
 - Abans de donar una feina per acabada: `npm run build` i mirar la pàgina a 400 px i a 1200 px.

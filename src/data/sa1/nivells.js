@@ -1,5 +1,7 @@
 // Els nivells d'organització tal com surten a la presentació de classe
 // («Organització de la matèria», diapositiva 6).
+// Canvis de la professora (revisió del 12-10-2026): teixit amb cèl·lules «semblants»,
+// l'ecosistema inclou el medi físic i s'afegeix la biosfera (amb el text del joc).
 const PLURI = 'Només organismes pluricel·lulars'
 
 export const NIVELLS_ORGANITZACIO = [
@@ -13,7 +15,7 @@ export const NIVELLS_ORGANITZACIO = [
     titol: 'Nivell cel·lular',
     text: 'Comprèn les cèl·lules. Per exemple les neurones, cèl·lules musculars, bacteris, etc. Hi ha cèl·lules que per si mateixes constitueixen un ésser viu (unicel·lulars): nivell organisme.'
   },
-  { titol: 'Nivell teixit', text: 'Conjunt de cèl·lules iguals que fan una mateixa funció.', marca: PLURI },
+  { titol: 'Nivell teixit', text: 'Conjunt de cèl·lules semblants que fan una mateixa funció.', marca: PLURI },
   { titol: 'Nivell òrgan', text: 'Conjunt de teixits que treballen junts per fer una mateixa funció.', marca: PLURI },
   { titol: 'Nivell sistemes i aparells', text: "Conjunt d'òrgans que treballen junts per fer una mateixa funció.", marca: PLURI },
   { titol: 'Nivell organisme', text: 'És un ésser viu en si mateix. Pot ser unicel·lular i pluricel·lular.' },
@@ -24,6 +26,7 @@ export const NIVELLS_ORGANITZACIO = [
   { titol: 'Nivell de comunitat', text: 'El conjunt de poblacions que conviuen en un medi.' },
   {
     titol: "Nivell d'ecosistema",
-    text: "Comprèn el conjunt de poblacions que hi ha en una determinada zona i les relacions que s'estableixen entre elles i entre elles i el medi."
-  }
+    text: "Comprèn les poblacions d'una zona, el medi físic on viuen (sòl, aigua, aire) i les relacions que s'estableixen entre elles i amb el medi."
+  },
+  { titol: 'Nivell de biosfera', text: 'El conjunt de tots els ecosistemes de la Terra.' }
 ]
