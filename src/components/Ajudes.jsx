@@ -68,19 +68,39 @@ export function ModelFrase({ valor }) {
   )
 }
 
-// Imatge d'una fase o d'un exercici: { src, alt, peu, credit }.
+// Diu si una imatge (o una llista d'imatges) ja té alguna cosa per ensenyar.
+export const teImatge = (valor) =>
+  Array.isArray(valor) ? valor.some((x) => x && !esPendent(x)) : !!valor && !esPendent(valor)
+
+// Imatge d'una fase o d'un exercici: { src, alt, peu, credit }, o una llista d'imatges.
+// `revisar: true` vol dir que el peu i el text alternatiu els ha proposat Claude.
 export function Imatge({ valor }) {
   if (valor == null) return null
+  if (Array.isArray(valor)) {
+    const visibles = CONFIG.modeRevisio ? valor : valor.filter((x) => x && !esPendent(x))
+    return (
+      <div className="imatges">
+        {visibles.map((x, i) => (
+          <Imatge key={x.src || i} valor={x} />
+        ))}
+        {visibles.some((x) => x?.src) ? <p className="nota-eina imatges__nota">Toca una foto per veure-la més gran.</p> : null}
+      </div>
+    )
+  }
   if (esPendent(valor)) return <Pendent nota={valor.nota} />
   return (
     <figure className="imatge">
-      <img src={valor.src} alt={valor.alt || ''} loading="lazy" />
+      <a href={valor.src} target="_blank" rel="noreferrer" className="imatge__enllac">
+        <img src={valor.src} alt={valor.alt || ''} loading="lazy" />
+        <span className="amagat"> (s'obre en una pestanya nova)</span>
+      </a>
       {valor.peu || valor.credit ? (
         <figcaption>
           {valor.peu ? <Text>{valor.peu}</Text> : null}
           {valor.credit ? <span className="imatge__credit">{valor.credit}</span> : null}
         </figcaption>
       ) : null}
+      {valor.revisar ? <MarcaProposta nota="Peu i text alternatiu de Claude. Revisa'ls." /> : null}
     </figure>
   )
 }

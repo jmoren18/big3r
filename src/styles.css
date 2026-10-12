@@ -1867,6 +1867,22 @@ ol.solucio {
   font-weight: 800;
   color: var(--blau);
 }
+.imatges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  max-width: var(--lectura);
+}
+.imatges .imatge {
+  max-width: none;
+}
+.imatges__nota {
+  grid-column: 1 / -1;
+}
+.imatge__enllac {
+  display: block;
+  cursor: zoom-in;
+}
 .imatge {
   margin: 0;
   max-width: var(--lectura);

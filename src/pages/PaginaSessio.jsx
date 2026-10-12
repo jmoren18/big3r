@@ -5,7 +5,7 @@ import { usePrefs } from '../prefs.jsx'
 import { Enllac } from '../router.jsx'
 import { definida, objectiusSA, veina } from '../sessions.js'
 import { textCompetencia } from '../data/curs-info.js'
-import { Imatge, ModelFrase, Paraules, SelectorVersio } from '../components/Ajudes.jsx'
+import { Imatge, ModelFrase, Paraules, SelectorVersio, teImatge } from '../components/Ajudes.jsx'
 import Contingut, { Apunts, ExitTiquet, Pregunta, Recursos, teContingut, teRecursos } from '../components/Contingut.jsx'
 import Icona from '../components/Icona.jsx'
 import Pendent from '../components/Pendent.jsx'
@@ -28,6 +28,8 @@ function esVisible(fase, sa, sessio, versio) {
   }
   if (valor == null) return false
   if (CONFIG.modeRevisio) return true
+  // Una imatge ja és contingut: la fase es veu encara que el text estigui pendent.
+  if (teImatge(sessio.imatges?.[fase.clau])) return true
   if (fase.especial === 'recursos') return teRecursos(valor)
   if (fase.especial === 'apunts') return !esPendent(valor)
   if (fase.especial === 'exit') return teContingut(valor.preguntes, versio)
